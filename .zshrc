@@ -30,7 +30,7 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
 
 # Staging helpers
-alias yarn-staging="source ~/.env-vars/staging.sh"
+[[ -f ~/.env-vars/staging.sh ]] && source ~/.env-vars/staging.sh
 alias yarn-staging-js="yarn-staging && nodemon --exec \"yarn start\""
 alias yarn-staging-ts="yarn-staging && nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
 
