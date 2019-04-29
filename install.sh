@@ -21,13 +21,21 @@ sudo apt install code -y
 ###########################################
 echo "Installing Node.js"
 
-# NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+# Node
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 # Yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install yarn -y
+
+# Global packages
+sudo npm install -g n
+sudo npm install -g nodemon
+
+# Use latest Node.js version
+sudo n latest
 
 ############################################
 #          Oh My Zsh and plugins
@@ -36,9 +44,6 @@ echo "Installing Oh-My-Zsh..."
 
 # ZSH
 sudo apt install zsh
-
-# Oh-my-zsh
-sudo chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Plugins
@@ -46,28 +51,15 @@ sudo apt-get install git-extras
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-cp .zshrc ~/.zshrc
-
-############################################
-#                 Insomnia
-############################################
-echo "Installing Insomnia..."
-
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
-sudo apt-get update && sudo apt-get install insomnia -y
-
 ############################################
 #                 Tools
 ############################################
 echo "Installing tools..."
 
-# Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-
-# Cat
-sudo dpkg -i bat_0.10.0_amd64.deb
+# Insomnia
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+sudo apt-get update && sudo apt-get install insomnia -y
 
 # Ripgrep
 sudo apt-get install ripgrep

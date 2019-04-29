@@ -33,7 +33,7 @@ alias git-cleanup="git fetch -p && git removed-branches -f --prune"
 alias git-checkpoint="gaa && gc -m \"checkpoint\" && gp"
 
 # Other helpers
-alias cat=bat
+# alias cat=bat
 alias grep=rg
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
