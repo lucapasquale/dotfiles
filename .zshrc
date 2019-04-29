@@ -25,8 +25,8 @@ export PATH="$PATH:/usr/local/sbin"
 
 # Staging helpers
 [[ -f ~/.env-vars/staging.sh ]] && source ~/.env-vars/staging.sh
-alias yarn-staging-js="yarn-staging && nodemon --exec \"yarn start\""
-alias yarn-staging-ts="yarn-staging && nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
+alias yarn-staging-js="yarn-staging nodemon --exec \"yarn start\""
+alias yarn-staging-ts="yarn-staging nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
 
 # Git helpers
 alias git-cleanup="git fetch -p && git removed-branches -f --prune"
