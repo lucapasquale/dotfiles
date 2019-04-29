@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Basics
+sudo apt install git curl fonts-firacode -y
+
 ############################################
 #                 VSCode
 ############################################
@@ -11,7 +14,7 @@ sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
-sudo apt install code
+sudo apt install code -y
 
 ###########################################
 #               Node.js
@@ -24,7 +27,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 # Yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
+sudo apt-get update && sudo apt-get install yarn -y
 
 ############################################
 #          Oh My Zsh and plugins
@@ -52,7 +55,7 @@ echo "Installing Insomnia..."
 
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
-sudo apt-get update && sudo apt-get install insomnia
+sudo apt-get update && sudo apt-get install insomnia -y
 
 ############################################
 #                 Tools
