@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Basics
-sudo apt install -y git curl fonts-firacode jq
+sudo apt install -y git curl jq fonts-firacode
 
 ############################################
 #                 VSCode
@@ -34,8 +34,18 @@ sudo apt-get update && sudo apt-get install -y yarn
 sudo npm install -g n
 sudo npm install -g nodemon
 
-# Use latest Node.js version
-sudo n latest
+# Use Node.js LTS version
+sudo n lts
+
+############################################
+#               Databases
+############################################
+echo "Installing databases..."
+
+# Redis
+sudo apt update && sudo apt install -y redis-server
+sudo sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.conf
+sudo systemctl restart redis.service
 
 ############################################
 #          Oh My Zsh and plugins
