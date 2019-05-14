@@ -9,7 +9,7 @@ sudo apt install -y git curl jq fonts-firacode
 echo "Installing VSCode..."
 
 sudo apt update
-sudo apt install software-properties-common apt-transport-https wget
+sudo apt install -y software-properties-common apt-transport-https wget
 
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
@@ -53,7 +53,7 @@ sudo systemctl restart redis.service
 echo "Installing Oh-My-Zsh..."
 
 # ZSH
-sudo apt install zsh
+sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Plugins
@@ -74,3 +74,12 @@ sudo apt-get update && sudo apt-get install -y insomnia
 # Ripgrep
 sudo apt-get install ripgrep
 
+# DBeaver
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt-get update && sudo apt-get install -y dbeaver-ce
+
+# Spotify
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install -y spotify-client
