@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+USER_NAME='luca';
 
 # Basics
 sudo apt install -y git curl jq fonts-firacode
@@ -46,6 +47,16 @@ echo "Installing databases..."
 sudo apt update && sudo apt install -y redis-server
 sudo sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.conf
 sudo systemctl restart redis.service
+
+# PostgreSQL
+sudo apt update && sudo apt install -y postgresql postgresql-contrib
+sudo -u postgres createuser -s $USER_NAME
+sudo -u postgres createdb $USER_NAME
+
+# Alterar pg_hba com
+# sudo nano $(psql -t -P format=unaligned -c 'show hba_file')
+sudo systemctl restart postgresql
+
 
 ############################################
 #          Oh My Zsh and plugins
