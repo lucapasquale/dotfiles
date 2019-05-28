@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-USER_NAME='luca';
+USER_NAME=luca;
 
 # Basics
 sudo apt install -y git curl jq fonts-firacode
