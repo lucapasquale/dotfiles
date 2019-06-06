@@ -2,7 +2,7 @@
 USER_NAME=luca;
 
 # Basics
-sudo apt install -y git curl jq fonts-firacode
+sudo apt install -y git curl jq xclip fonts-firacode
 
 ############################################
 #                 VSCode
