@@ -67,9 +67,6 @@ echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 sudo apt update && sudo apt install -y insomnia
 
-# Ripgrep
-sudo apt install -y ripgrep
-
 # Tmux
 sudo apt install -y tmux
 
@@ -93,9 +90,9 @@ sudo apt install -y zsh
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Plugins
-# sudo apt install -y git-extras
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sudo apt install -y git-extras
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ############################################
 #             Symbolic Links
