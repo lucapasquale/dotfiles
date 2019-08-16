@@ -1,13 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="avit"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
   git-extras
@@ -38,7 +32,6 @@ merge_to_current_branch() {
   gco $CURRENT_BRANCH
   gm $1
 }
-
 alias git-merge-to-current=merge_to_current_branch
 alias git-cleanup="git fetch -p && git removed-branches -f --prune"
 alias git-checkpoint="gaa && gc -m \"checkpoint\" && gp"

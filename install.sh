@@ -98,6 +98,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 #             Symbolic Links
 ############################################
 
-ln -s $PWD/.zshrc ~/.zshrc
-ln -s $PWD/tmux.conf ~/tmux.conf
-ln -s $PWD/.gitconfig ~/.gitconfig
+ln -s $PWD/.zshrc /home/$USER_NAME/.zshrc
+ln -s $PWD/.tmux.conf /home/$USER_NAME/.tmux.conf
+ln -s $PWD/.gitconfig /home/$USER_NAME/.gitconfig
