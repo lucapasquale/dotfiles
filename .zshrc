@@ -20,10 +20,8 @@ export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/npm/bin"
 export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 
-# Staging helpers
-[[ -f ~/.env-vars/staging.sh ]] && source ~/.env-vars/staging.sh
-alias yarn-staging-js="yarn-staging nodemon --exec \"yarn start\""
-alias yarn-staging-ts="yarn-staging nodemon --watch src -e ts --ignore 'src/**/*spec.ts' --exec 'yarn build && yarn start'"
+# Load private env vars
+[[ -f ~/.env-vars/private.sh ]] && source ~/.env-vars/private.sh
 
 # Git helpers
 merge_to_current_branch() {
