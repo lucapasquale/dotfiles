@@ -32,7 +32,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install -y yarn
 
 # Global packages
-sudo npm install -g n nodemon eslint tslint prettier
+sudo npm install -g typescript n nodemon eslint tslint prettier
 sudo npm install --unsafe-perm -g ngrok
 
 # Use Node.js LTS version
