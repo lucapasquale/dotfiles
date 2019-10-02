@@ -39,5 +39,12 @@ source $HOME/livupvenv/bin/activate
 export LIVUP_HOME=$HOME/livup
 alias robo3t=~/Apps/Robo-3T/bin/robo3t
 
+# React Native
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
