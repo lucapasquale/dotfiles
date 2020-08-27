@@ -18,6 +18,7 @@ rm -rf /home/$USER_NAME/.zshrc && ln -s $PWD/.zshrc /home/$USER_NAME/.zshrc
 
 # Plugins
 sudo apt-get install -y git-extras
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -36,28 +37,8 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install -y yarn
 
 # Global packages
-npm install -g typescript n nodemon eslint tslint prettier
+npm install -g typescript n nodemon eslint prettier
 npm install --unsafe-perm -g ngrok
-
-############################################
-#               Databases
-############################################
-echo ""
-echo "Installing databases..."
-
-# Redis
-sudo apt-get update && sudo apt-get install -y redis-server
-sudo sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.conf
-sudo systemctl restart redis.service
-
-# PostgreSQL
-sudo apt-get update && sudo apt-get install -y postgresql postgresql-contrib
-sudo -u postgres createuser -s $USER_NAME
-sudo -u postgres createdb $USER_NAME
-
-# Alterar pg_hba com
-# sudo nano $(psql -t -P format=unaligned -c 'show hba_file')
-sudo systemctl restart postgresql
 
 ############################################
 #                 Tools
@@ -65,7 +46,7 @@ sudo systemctl restart postgresql
 echo ""
 echo "Installing tools..."
 
-# Docker
+# # Docker
 curl -fsSL get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker $USER_NAME
@@ -83,8 +64,3 @@ rm -rf /home/$USER_NAME/.tmux.conf && ln -s $PWD/.tmux.conf /home/$USER_NAME/.tm
 
 # AWS CLI
 sudo apt-get install -y awscli
-
-# DBeaver
-wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
-echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
-sudo apt-get update && sudo apt-get install -y dbeaver-ce
