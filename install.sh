@@ -2,7 +2,7 @@
 USER_NAME=luca;
 
 # Basics
-sudo apt-get install -y git curl jq xclip fonts-firacode
+sudo apt-get install -y git curl jq bat fonts-firacode
 rm -rf /home/$USER_NAME/.gitconfig && ln -s $PWD/.gitconfig /home/$USER_NAME/.gitconfig
 
 ############################################
@@ -18,9 +18,9 @@ rm -rf /home/$USER_NAME/.zshrc && ln -s $PWD/.zshrc /home/$USER_NAME/.zshrc
 
 # Plugins
 sudo apt-get install -y git-extras
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 ###########################################
 #               Node.js
@@ -29,7 +29,7 @@ echo ""
 echo "Installing Node.js"
 
 # Node
-curl -L https://git.io/n-install | bash -s -- -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 # Yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -37,25 +37,13 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install -y yarn
 
 # Global packages
-npm install -g typescript n nodemon eslint prettier
-npm install --unsafe-perm -g ngrok
+npm install -g typescript nodemon eslint prettier ngrok
 
 ############################################
 #                 Tools
 ############################################
 echo ""
 echo "Installing tools..."
-
-# # Docker
-curl -fsSL get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker $USER_NAME
-
-# Insomnia
-sudo snap install insomnia
-
-# Spotify
-sudo snap install spotify
 
 # Tmux
 sudo apt-get install -y tmux
