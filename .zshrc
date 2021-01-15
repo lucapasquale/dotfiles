@@ -34,6 +34,7 @@ export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 # Git helpers
 alias git-cleanup="git fetch -p && git removed-branches -f --prune"
 alias git-checkpoint="gaa && gc -m \"checkpoint\" && gp"
+alias git-merge-to-current-branch=merge_to_current_branch
 merge_to_current_branch() {
   CURRENT_BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
   gco $1 && gl
