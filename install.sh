@@ -2,7 +2,7 @@
 USER_NAME=luca;
 
 # Basics
-sudo apt-get install -y git curl jq bat fonts-firacode
+sudo apt-get install -y git curl jq fonts-firacode
 rm -rf /home/$USER_NAME/.gitconfig && ln -s $PWD/.gitconfig /home/$USER_NAME/.gitconfig
 
 ############################################
@@ -12,7 +12,7 @@ echo ""
 echo "Installing Oh-My-Zsh..."
 
 # ZSH
-sudo apt-get install -y zsh
+sudo apt-get install -y zsh bat fzf
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 rm -rf /home/$USER_NAME/.zshrc && ln -s $PWD/.zshrc /home/$USER_NAME/.zshrc
 
