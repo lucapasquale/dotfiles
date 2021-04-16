@@ -42,10 +42,9 @@ merge_to_current_branch() {
   gm $1
 }
 
-# Nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh

@@ -29,7 +29,7 @@ echo ""
 echo "Installing Node.js"
 
 # Node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl https://get.volta.sh | bash -s -- --skip-setup
 
 # Yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
