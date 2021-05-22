@@ -29,7 +29,9 @@ echo ""
 echo "Installing Node.js"
 
 # Node
-curl https://get.volta.sh | bash -s -- --skip-setup
+asdf plugin-add nodejs
+asdf install nodejs latest:14
+asdf global nodejs latest:14
 
 # Yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -

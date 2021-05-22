@@ -12,6 +12,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   git-extras
+  asdf
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -41,10 +42,6 @@ merge_to_current_branch() {
   gco $CURRENT_BRANCH
   gm $1
 }
-
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
