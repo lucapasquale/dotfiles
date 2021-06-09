@@ -21,7 +21,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR='code'
-alias cat='batcat'
 
 # Paths
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -44,8 +43,7 @@ merge_to_current_branch() {
 }
 
 # fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Plugins
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
