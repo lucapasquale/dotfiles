@@ -39,7 +39,7 @@ merge_to_current_branch() {
   CURRENT_BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
   gco $1 && gl
   gco $CURRENT_BRANCH
-  gm $1
+  GIT_MERGE_AUTOEDIT=no git merge $1
 }
 
 # fzf
