@@ -53,6 +53,3 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~
 sudo apt-get install -y tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 rm -rf ~/.tmux.conf && ln -s $PWD/.tmux.conf ~/.tmux.conf
-
-# aws cli
-sudo apt-get install -y awscli
