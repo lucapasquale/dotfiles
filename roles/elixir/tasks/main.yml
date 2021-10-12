@@ -1,10 +1,14 @@
 - name: Add elixir plugin
-  command: ~/.asdf/bin/asdf plugin-add elixir
-  register: elixir_add
-  failed_when: elixir_add == 2
+  command:
+    cmd: ~/.asdf/bin/asdf plugin-add elixir
+    creates: ~/.asdf/installs/elixir
 
 - name: Install elixir
-  command: ~/.asdf/bin/asdf install elixir 1.12.3-otp-24
+  command:
+    cmd: ~/.asdf/bin/asdf install elixir 1.12.3-otp-24
+    creates: ~/.asdf/installs/elixir/1.12.3-otp-24
 
 - name: Set global elixir version
-  command: ~/.asdf/bin/asdf global elixir 1.12.3-otp-24
+  command:
+    cmd: ~/.asdf/bin/asdf global elixir 1.12.3-otp-24
+    creates: ~/.asdf/installs/elixir/1.12.3-otp-24
