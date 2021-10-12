@@ -1,0 +1,9 @@
+- name: Install base apt packages
+  become: yes
+  package:
+    state: present
+    name:
+      - jq
+      - fzf
+      - curl
+      - fonts-firacode

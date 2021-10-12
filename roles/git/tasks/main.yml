@@ -1,11 +1,10 @@
-- name: install git on Linux
+- name: Install git
   become: yes
   package:
-    name: git
     state: present
-  when: ansible_facts['os_family'] == "ArchLinux"
+    name: git
 
-- name: symlink gitconfig
+- name: Symlink .gitconfig
   file:
     src: "{{ ansible_env.PWD }}/roles/git/files/.gitconfig"
     path: ~/.gitconfig
