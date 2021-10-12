@@ -5,3 +5,7 @@
     - git
     - zsh
     - tmux
+    - asdf
+    - nodejs
+    - erlang
+    - elixir
