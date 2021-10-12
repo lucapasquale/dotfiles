@@ -1,0 +1,12 @@
+- name: Install tmux
+  become: yes
+  package:
+    state: present
+    name: tmux
+
+- name: Symlink .tmux.conf
+  file:
+    src: "{{ ansible_env.PWD }}/roles/tmux/files/.tmux.conf"
+    path: ~/.tmux.conf
+    state: link
+    force: yes

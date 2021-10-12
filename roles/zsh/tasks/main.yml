@@ -1,0 +1,39 @@
+- name: Install ZSH
+  become: yes
+  package:
+    state: present
+    name: zsh
+
+- name: Install oh-my-zsh
+  shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended'
+  args:
+    creates: ~/.oh-my-zsh
+
+- name: Install git-extras
+  become: yes
+  package:
+    state: present
+    name: git-extras
+
+- name: Install syntax-highlight plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+- name: Install autosuggestions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+- name: Install powerlevel10k theme
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    depth: 1
+
+- name: Symlink .zshrc
+  file:
+    src: "{{ ansible_env.PWD }}/roles/zsh/files/.zshrc"
+    path: ~/.zshrc
+    state: link
+    force: yes

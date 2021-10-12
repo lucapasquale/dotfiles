@@ -1,0 +1,44 @@
+- name: Add nodejs plugin
+  command:
+    cmd: ~/.asdf/bin/asdf plugin-add nodejs
+    creates: ~/.asdf/installs/nodejs
+
+- name: Install nodejs
+  command:
+    cmd: ~/.asdf/bin/asdf install nodejs 14.18.0
+    creates: ~/.asdf/installs/nodejs/14.18.0
+
+- name: Set global nodejs version
+  command:
+    cmd: ~/.asdf/bin/asdf global nodejs 14.18.0
+    creates: ~/.asdf/installs/nodejs/14.18.0
+
+- name: Install "yarn" node.js package globally
+  npm:
+    name: yarn
+    global: yes
+
+- name: Install "typescript" node.js package globally
+  npm:
+    name: typescript
+    global: yes
+
+- name: Install "eslint" node.js package globally
+  npm:
+    name: eslint
+    global: yes
+
+- name: Install "prettier" node.js package globally
+  npm:
+    name: prettier
+    global: yes
+
+- name: Install "nodemon" node.js package globally
+  npm:
+    name: nodemon
+    global: yes
+
+- name: Install "ngrok" node.js package globally
+  npm:
+    name: ngrok
+    global: yes

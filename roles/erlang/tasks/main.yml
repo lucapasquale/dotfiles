@@ -1,0 +1,35 @@
+- name: Install required packages
+  become: yes
+  package:
+    state: present
+    name:
+      - build-essential
+      - autoconf
+      - m4
+      - libncurses5-dev
+      - libwxgtk3.0-gtk3-dev
+      - libgl1-mesa-dev
+      - libglu1-mesa-dev
+      - libpng-dev
+      - libssh-dev
+      - unixodbc-dev
+      - xsltproc
+      - fop
+      - libxml2-utils
+      - libncurses-dev
+      - openjdk-11-jdk
+
+- name: Add erlang plugin
+  command:
+    cmd: ~/.asdf/bin/asdf plugin-add erlang
+    creates: ~/.asdf/installs/erlang
+
+- name: Install erlang
+  command:
+    cmd: ~/.asdf/bin/asdf install erlang 24.1.2
+    creates: ~/.asdf/installs/erlang/24.1.2
+
+- name: Set global erlang version
+  command:
+    cmd: ~/.asdf/bin/asdf global erlang 24.1.2
+    creates: ~/.asdf/installs/erlang/24.1.2

@@ -1,0 +1,14 @@
+- name: Add elixir plugin
+  command:
+    cmd: ~/.asdf/bin/asdf plugin-add elixir
+    creates: ~/.asdf/installs/elixir
+
+- name: Install elixir
+  command:
+    cmd: ~/.asdf/bin/asdf install elixir 1.12.3-otp-24
+    creates: ~/.asdf/installs/elixir/1.12.3-otp-24
+
+- name: Set global elixir version
+  command:
+    cmd: ~/.asdf/bin/asdf global elixir 1.12.3-otp-24
+    creates: ~/.asdf/installs/elixir/1.12.3-otp-24

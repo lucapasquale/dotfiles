@@ -1,0 +1,12 @@
+- name: Install git
+  become: yes
+  package:
+    state: present
+    name: git
+
+- name: Symlink .gitconfig
+  file:
+    src: "{{ ansible_env.PWD }}/roles/git/files/.gitconfig"
+    path: ~/.gitconfig
+    state: link
+    force: yes

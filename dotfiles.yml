@@ -1,0 +1,11 @@
+- name: Set up local workstation
+  hosts: local
+  roles:
+    - base
+    - git
+    - zsh
+    - tmux
+    - asdf
+    - nodejs
+    - erlang
+    - elixir
