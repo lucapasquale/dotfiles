@@ -49,5 +49,8 @@ merge_to_current_branch() {
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Fixes slow copy-paste
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
