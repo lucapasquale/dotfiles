@@ -13,6 +13,7 @@ plugins=(
   git
   git-extras
   asdf
+  fzf
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -28,9 +29,6 @@ export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/npm/bin"
 export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
 
-# Load work profile
-[[ -f ~/.work/profile.sh ]] && source ~/.work/profile.sh
-
 # Git helpers
 alias git-cleanup="git fetch -p && git removed-branches -f --prune"
 alias git-checkpoint="gaa && gc -m \"checkpoint\" --no-verify && gp"
@@ -41,9 +39,6 @@ merge_to_current_branch() {
   gco $CURRENT_BRANCH
   GIT_MERGE_AUTOEDIT=no git merge $1
 }
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Plugins
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

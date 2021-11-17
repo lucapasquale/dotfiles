@@ -4,6 +4,5 @@
     state: present
     name:
       - jq
-      - fzf
       - curl
       - fonts-firacode

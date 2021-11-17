@@ -15,6 +15,12 @@
     state: present
     name: git-extras
 
+- name: Install FZF
+  become: yes
+  package:
+    state: present
+    name: fzf
+
 - name: Install syntax-highlight plugin
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
