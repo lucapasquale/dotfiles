@@ -4,7 +4,6 @@
     - base
     - git
     - zsh
-    - tmux
     - asdf
     - nodejs
     - erlang
