@@ -31,15 +31,21 @@
     repo: https://github.com/zsh-users/zsh-autosuggestions.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-- name: Install powerlevel10k theme
-  git:
-    repo: https://github.com/romkatv/powerlevel10k.git
-    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
-    depth: 1
+- name: Install starship theme
+  become: yes
+  shell:
+    cmd: curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 - name: Symlink .zshrc
   file:
     src: "{{ ansible_env.PWD }}/roles/zsh/files/.zshrc"
     path: ~/.zshrc
+    state: link
+    force: yes
+
+- name: Symlink starship.toml
+  file:
+    src: "{{ ansible_env.PWD }}/roles/zsh/files/starship.toml"
+    path: ~/.config/starship.toml
     state: link
     force: yes

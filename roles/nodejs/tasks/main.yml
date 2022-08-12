@@ -5,13 +5,12 @@
 
 - name: Install nodejs
   command:
-    cmd: ~/.asdf/bin/asdf install nodejs 14.18.0
-    creates: ~/.asdf/installs/nodejs/14.18.0
+    cmd: ~/.asdf/bin/asdf install nodejs latest
+    creates: ~/.asdf/installs/nodejs/lts
 
 - name: Set global nodejs version
   command:
-    cmd: ~/.asdf/bin/asdf global nodejs 14.18.0
-    creates: ~/.asdf/installs/nodejs/14.18.0
+    cmd: ~/.asdf/bin/asdf global nodejs latest
 
 - name: Install "yarn" node.js package globally
   npm:
