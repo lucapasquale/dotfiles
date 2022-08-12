@@ -5,10 +5,4 @@
 
 - name: Install elixir
   command:
-    cmd: ~/.asdf/bin/asdf install elixir 1.12.3-otp-24
-    creates: ~/.asdf/installs/elixir/1.12.3-otp-24
-
-- name: Set global elixir version
-  command:
-    cmd: ~/.asdf/bin/asdf global elixir 1.12.3-otp-24
-    creates: ~/.asdf/installs/elixir/1.12.3-otp-24
+    cmd: ~/.asdf/bin/asdf install elixir latest && ~/.asdf/bin/asdf global elixir latest
