@@ -19,4 +19,6 @@ Languages are managed with [asdf](https://asdf-vm.com/#/).
 
 ## Bootstrap
 
-Run the script `./bootstrap.sh`
+ 1. Clone this repository into `~/.dotfiles`
+ 2. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+ 3. Run the script `./bootstrap.sh`

@@ -44,6 +44,11 @@
     state: link
     force: yes
 
+- name: Create .config folder
+  file:
+    path: ~/.config
+    state: directory
+
 - name: Symlink starship.toml
   file:
     src: "{{ ansible_env.PWD }}/roles/zsh/files/starship.toml"
