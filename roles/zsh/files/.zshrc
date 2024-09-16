@@ -27,7 +27,7 @@ alias git-checkpoint="gaa && gc -m \"checkpoint\" --no-verify && gp"
 alias git-merge-to-current-branch=merge_to_current_branch
 merge_to_current_branch() {
   CURRENT_BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
-  gco $1 && gl
+  git fetch origin $1
   gco $CURRENT_BRANCH
   GIT_MERGE_AUTOEDIT=no git merge $1
 }
